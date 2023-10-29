@@ -2,12 +2,15 @@ package homeworks.hm4;
 
 public class Animal {
     private String Name;
-    private  static int count=0;
+    public static int amount=0;
 
 
     public Animal(String name) {
+        amount++;
         Name = name;
-
+    }
+    public static void Amount(){
+        System.out.println("Кількість тварин: " + amount);
     }
 
     public String getName() {

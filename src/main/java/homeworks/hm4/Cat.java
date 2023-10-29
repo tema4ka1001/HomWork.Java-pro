@@ -7,6 +7,10 @@ public class Cat extends Animal {
     public Cat(String name, String colors) {
         super(name);
         this.colors = colors;
+        count++;
+    }
+    public static void Count(){
+        System.out.println("Кількість котів: " + count);
     }
 
     @Override

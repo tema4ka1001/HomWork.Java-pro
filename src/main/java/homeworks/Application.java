@@ -4,12 +4,16 @@ import homeworks.hm4.Animal;
 import homeworks.hm4.Cat;
 import homeworks.hm4.Dog;
 
+import javax.naming.Name;
 import java.util.ArrayList;
+import java.util.concurrent.Callable;
 
 public class Application {
     public static void main(String[] args) {
         ArrayList<Animal>animals=new ArrayList<Animal>();
-        animals.add(new Cat("Dasha", "Black" ));
+        animals.add(new Cat("Dasha", "Silver"));
+        animals.add(new Cat("Kitty", "Black"));
+        animals.add(new Dog("Tima", 3));
         animals.add(new Dog("Буч", 7));
         System.out.println();
 
@@ -26,6 +30,10 @@ public class Application {
             animals.get(i).Swim();
             System.out.println(animals.get(i).Show());
         }
-    }
 
+        Animal debil = new Animal("Name");
+       Animal.Amount();
+        Cat.Count();
+        Dog.Count2();
+    }
 }

@@ -4,11 +4,16 @@ import javax.xml.crypto.dsig.spec.DigestMethodParameterSpec;
 
 public class Dog extends Animal {
 private int age;
-private static int count = 0;
+public static int count = 0;
 
     public Dog(String name, int age) {
         super(name);
         this.age = age;
+        count++;
+    }
+
+    public static void Count2(){
+        System.out.println("Кількість cобак: " + count);
     }
 
     @Override
