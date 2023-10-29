@@ -1,5 +1,6 @@
 package homeworks;
 
+import homeworks.hm3.Car;
 import homeworks.hm4.Animal;
 import homeworks.hm4.Cat;
 import homeworks.hm4.Dog;
@@ -17,7 +18,8 @@ public class Application {
         animals.add(new Dog("Буч", 7));
         System.out.println();
 
-
+        Car audir8 = new Car("name", 300);
+        audir8.start();
         /*System.out.println(animals.get(0).Show());
         animals.get(0).Run();
         System.out.println(animals.get(1).Show());
