@@ -11,11 +11,26 @@ import homeworks.hm5.Second.Obstacle;
 import homeworks.hm5.Second.Participant;
 import homeworks.hm5.Second.Track;
 import homeworks.hm5.Second.Wall;
+import homeworks.hm6.HomeWorkApp;
+import homeworks.hm7.StringMethod;
 
 import java.util.ArrayList;
 
 public class Application {
     public static void main(String[] args) {
+
+
+        System.out.println(StringMethod.findSymbolOccurance("Hello", 'l'));
+        System.out.println(StringMethod.findWordPosition("Apollo", "ollo"));
+        System.out.println(StringMethod.stringreverse("Hello"));
+
+
+
+
+
+
+
+
         ArrayList<Animal> animals = new ArrayList<Animal>();
         animals.add(new Cat("Dasha", "Silver"));
         animals.add(new Cat("Kitty", "Black"));
@@ -52,11 +67,7 @@ public class Application {
         Dog.Count2();
 
         //System.out.println("____________________");
-       // System.out.println("Площа всіх фігур: " + squareOfAllFigurehw5(itInterfaces));
-
-
-
-
+        // System.out.println("Площа всіх фігур: " + squareOfAllFigurehw5(itInterfaces));
 
         System.out.println("_____________________");
         ArrayList<Participant> participants = new ArrayList<Participant>();
@@ -64,16 +75,17 @@ public class Application {
         participants.add(new Participant("Cat"));
         participants.add(new Participant("Robot"));
 
-        ArrayList<Obstacle>obstacles = new ArrayList<Obstacle>();
+        ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
         obstacles.add(new Track(200));
         obstacles.add(new Wall(4));
         obstacles.add(new Track(500));
         obstacles.add(new Wall(2));
-        for (Participant participant: participants){
-            for (Obstacle obstacle: obstacles){
+        for (Participant participant : participants) {
+            for (Obstacle obstacle : obstacles) {
                 obstacle.overcome(participant);
             }
         }
+
     }
 
     public static double squareOfAllFigurehw5(ArrayList<Triangle.ITInterface>sumfigure){
@@ -91,4 +103,7 @@ public class Application {
         }
         return sum;
     }
+
+
+
 }
