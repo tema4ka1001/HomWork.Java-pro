@@ -13,21 +13,29 @@ import homeworks.hm5.Second.Track;
 import homeworks.hm5.Second.Wall;
 import homeworks.hm6.HomeWorkApp;
 import homeworks.hm7.StringMethod;
+import homeworks.hm8.ArrayValueCalculator;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Application {
     public static void main(String[] args) {
 
+        System.out.println("__________________");
+        System.out.println(Thread.currentThread().getState());
 
-        System.out.println(StringMethod.findSymbolOccurance("Hello", 'l'));
-        System.out.println(StringMethod.findWordPosition("Apollo", "ollo"));
-        System.out.println(StringMethod.stringreverse("Hello"));
+        System.out.println( );
+        System.out.println("hm8");
+        System.out.println( );
+        String[][] arr = {{"10", "20", "30"}, {"40", "50", "60"}};
 
-
-
-
-
+        try {
+            ArrayValueCalculator.doCalc(arr);
+        } catch (ArrayValueCalculator.ArraySizeException e) {
+            e.getMessage();
+        } catch (ArrayValueCalculator.ArrayDataExeption e) {
+            e.getMessage();
+        }
 
 
 
@@ -49,7 +57,7 @@ public class Application {
         System.out.println("-------------------");
 
         /*S
-        ystem.out.println(animals.get(0).Show());
+        System.out.println(animals.get(0).Show());
         animals.get(0).Run();
         System.out.println(animals.get(1).Show());
         animals.get(1).Run();
@@ -68,7 +76,7 @@ public class Application {
 
         //System.out.println("____________________");
         // System.out.println("Площа всіх фігур: " + squareOfAllFigurehw5(itInterfaces));
-
+        System.out.println("   ");
         System.out.println("_____________________");
         ArrayList<Participant> participants = new ArrayList<Participant>();
         participants.add(new Participant("Human"));
@@ -85,6 +93,13 @@ public class Application {
                 obstacle.overcome(participant);
             }
         }
+
+        System.out.println("  ");
+        System.out.println("HM7__________________");
+        System.out.println(StringMethod.findSymbolOccurance("Hello", 'l'));
+        System.out.println(StringMethod.findWordPosition("Apollo", "ollo"));
+        System.out.println(StringMethod.stringreverse("Hello"));
+        //System.out.println(StringMethod.isPolindrom("Hello"));
 
     }
 
