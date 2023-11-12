@@ -27,15 +27,32 @@ public class Application {
         System.out.println( );
         System.out.println("hm8");
         System.out.println( );
-        String[][] arr = {{"10", "20", "30"}, {"40", "50", "60"}};
+        String[][] arr = {
+                {"10", "20", "30", "40" +
+                "50"},{"60", "70", "80"}};
 
-        try {
+        /*try {
             ArrayValueCalculator.doCalc(arr);
         } catch (ArrayValueCalculator.ArraySizeException e) {
             e.getMessage();
         } catch (ArrayValueCalculator.ArrayDataExeption e) {
             e.getMessage();
         }
+        finally {
+            System.out.println("Помилки не знайдено, программа працює далі");
+        }
+
+         */
+        try {
+            ArrayValueCalculator.doCalc(arr);
+        } catch (ArrayValueCalculator.ArrayDataExeption e) {
+            e.getMessage();
+        }
+        finally {
+            System.out.println("Помилки не знайдено, программа працює далі");
+        }
+
+
 
 
 
