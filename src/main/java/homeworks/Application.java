@@ -1,5 +1,6 @@
 package homeworks;
 
+import homeworks.hm10.ValueCalculator;
 import homeworks.hm3.Car;
 import homeworks.hm4.Animal;
 import homeworks.hm4.Cat;
@@ -13,6 +14,7 @@ import homeworks.hm5.Second.Track;
 import homeworks.hm5.Second.Wall;
 import homeworks.hm6.HomeWorkApp;
 import homeworks.hm7.StringMethod;
+import homeworks.hm8.ArraySizeException;
 import homeworks.hm8.ArrayValueCalculator;
 
 import java.lang.reflect.Array;
@@ -28,9 +30,7 @@ public class Application {
         System.out.println("hm8");
         System.out.println( );
         String[][] arr = {
-                {"10", "20", "30", "40" +
-                "50"},{"60", "70", "80"}};
-
+                { "20",},{"60", "23", }};
         /*try {
             ArrayValueCalculator.doCalc(arr);
         } catch (ArrayValueCalculator.ArraySizeException e) {
@@ -41,12 +41,24 @@ public class Application {
         finally {
             System.out.println("Помилки не знайдено, программа працює далі");
         }
-
          */
+        System.out.println("--------hm10-----------");
+        try {
+            ValueCalculator valueCalculator = new ValueCalculator(543221);
+            valueCalculator.Array();
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+
+        }
+
+
         try {
             ArrayValueCalculator.doCalc(arr);
         } catch (ArrayValueCalculator.ArrayDataExeption e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
+
+        }catch (ArrayValueCalculator.ArraySizeException e){
+            System.out.println(e.getMessage());
         }
         finally {
             System.out.println("Помилки не знайдено, программа працює далі");
