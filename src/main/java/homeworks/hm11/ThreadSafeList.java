@@ -37,5 +37,40 @@ public class ThreadSafeList<T> {
                lock.unlock();
           }
      }
-
+     public T get(int index){
+          lock.lock();
+          try {
+               if (index >= 0 && index < size){
+                  return (T) arry[index];
+               }else
+                    throw new IllegalArgumentException("Index: " + index);
+          }
+          finally {
+               lock.unlock();
+          }
+     }
+     public void remove(T element){
+          lock.lock();
+          try {
+               int tnp = -1;
+               for (int i = 0; i<size; i++){
+                    if (arry[i].equals(element)){
+                         tnp = 1;
+                         break;
+                    }
+               }
+               if (tnp != -1){
+                    for (int i= tnp; i < size -1; i++){
+                         arry[i] = arry[i +1];
+                    }
+                    size--;
+               }
+               else{
+                    throw new IllegalArgumentException("Element: " + element);
+               }
+          }
+          finally {
+               lock.unlock();
+          }
+     }
 }

@@ -1,6 +1,7 @@
 package homeworks;
 
 import homeworks.hm10.ValueCalculator;
+import homeworks.hm11.PetrolStation;
 import homeworks.hm12.MethodCollections;
 import homeworks.hm3.Car;
 import homeworks.hm4.Animal;
@@ -20,21 +21,20 @@ import homeworks.hm8.ArrayValueCalculator;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Application {
     public static void main(String[] args) {
 
-        System.out.println("---------hm12-----------");
-        ArrayList<String> wordList = new ArrayList<>();
-        wordList.add("apple");
-        wordList.add("banana");
-        wordList.add("orange");
-        wordList.add("apple");
-        wordList.add("grape");
-        wordList.add("apple");
-        wordList.add("kiwi");
-        wordList.add("banana");
-
+        System.out.println("------hm11-------");
+        PetrolStation petrolStation = new PetrolStation(100.0);
+        Thread thread1 = new Thread(() -> petrolStation.Refuel(12.0));
+        Thread thread2 = new Thread(() -> petrolStation.Refuel(20.0));
+        Thread thread3 = new Thread(() -> petrolStation.Refuel(10.0));
+        // Запуск потоків
+        thread1.start();
+        thread2.start();
+        thread3.start();
 
 
 
