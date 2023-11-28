@@ -1,6 +1,7 @@
 package homeworks;
 
 import homeworks.hm10.ValueCalculator;
+import homeworks.hm12.MethodCollections;
 import homeworks.hm3.Car;
 import homeworks.hm4.Animal;
 import homeworks.hm4.Cat;
@@ -23,14 +24,28 @@ import java.util.ArrayList;
 public class Application {
     public static void main(String[] args) {
 
+        System.out.println("---------hm12-----------");
+        ArrayList<String> wordList = new ArrayList<>();
+        wordList.add("apple");
+        wordList.add("banana");
+        wordList.add("orange");
+        wordList.add("apple");
+        wordList.add("grape");
+        wordList.add("apple");
+        wordList.add("kiwi");
+        wordList.add("banana");
+
+
+
+
         System.out.println("__________________");
         System.out.println(Thread.currentThread().getState());
 
-        System.out.println( );
+        System.out.println();
         System.out.println("hm8");
-        System.out.println( );
+        System.out.println();
         String[][] arr = {
-                { "20",},{"60", "23", }};
+                {"20",}, {"60", "23",}};
         /*try {
             ArrayValueCalculator.doCalc(arr);
         } catch (ArrayValueCalculator.ArraySizeException e) {
@@ -46,7 +61,7 @@ public class Application {
         try {
             ValueCalculator valueCalculator = new ValueCalculator(543221);
             valueCalculator.Array();
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
 
         }
@@ -57,15 +72,11 @@ public class Application {
         } catch (ArrayValueCalculator.ArrayDataExeption e) {
             System.out.println(e.getMessage());
 
-        }catch (ArrayValueCalculator.ArraySizeException e){
+        } catch (ArrayValueCalculator.ArraySizeException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             System.out.println("Помилки не знайдено, программа працює далі");
         }
-
-
-
 
 
         ArrayList<Animal> animals = new ArrayList<Animal>();
@@ -132,22 +143,19 @@ public class Application {
 
     }
 
-    public static double squareOfAllFigurehw5(ArrayList<Triangle.ITInterface>sumfigure){
-      double sum = 0;
-        for (int i=0; i<sumfigure.size(); i++){
-            if ( sumfigure.get(i) instanceof Square){
-                sum += ((Square)sumfigure.get(i)).calculate();
-            }
-            else if (sumfigure.get(i) instanceof Triangle){
+    public static double squareOfAllFigurehw5(ArrayList<Triangle.ITInterface> sumfigure) {
+        double sum = 0;
+        for (int i = 0; i < sumfigure.size(); i++) {
+            if (sumfigure.get(i) instanceof Square) {
+                sum += ((Square) sumfigure.get(i)).calculate();
+            } else if (sumfigure.get(i) instanceof Triangle) {
                 sum += ((Triangle) sumfigure.get(i)).calculate();
-                }
-            else if (sumfigure.get(i) instanceof Circle){
+            } else if (sumfigure.get(i) instanceof Circle) {
                 sum += ((Circle) sumfigure.get(i)).calculate();
             }
         }
         return sum;
     }
-
 
 
 }
