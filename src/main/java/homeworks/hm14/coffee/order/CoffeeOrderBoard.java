@@ -14,6 +14,7 @@ private List<Order> orders;
         order.setNumOrder(orderCounter);
         orders.add(order);
     }
+
     public void deliver(){
         if (!orders.isEmpty()){
             Order delorder = orders.remove(0) ;
