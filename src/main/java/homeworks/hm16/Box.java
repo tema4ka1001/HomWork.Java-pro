@@ -11,22 +11,17 @@ public class Box < T extends Fruit>{
     public void addFruits(List<T> newFruits){
         fruits.addAll(newFruits);
     }
-    public float getWeight() {
-        if (fruits.isEmpty()) {
-            return 0.0f;
+    public double getWeight() {
+        return 0.0;
         }
-        float fruitWeight = fruits.get(0) instanceof Apple ? 1.0f : 1.5f;
-        return fruitWeight * fruits.size();
+    public boolean compare(Box<?> otherBox) {
+        return this.getWeight() == otherBox.getWeight();
     }
-    public boolean compare(Box<?> anotherBox) {
-        return Math.abs(this.getWeight() - anotherBox.getWeight()) < 0.0001;
-    }
-    public void merge(Box<T> anorherBox){
-        if (this == anorherBox){
-            return;
-        }
-        this.fruits.addAll(anorherBox.fruits);
-        anorherBox.fruits.clear();
+
+    public void merge(Box<T> otherBox) {
+        fruits.addAll(otherBox.fruits);
+        otherBox.fruits.clear();
+
     }
 }
 
